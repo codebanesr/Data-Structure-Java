@@ -9,7 +9,14 @@ public class Link {
 		SinglyLink.Iterator it = sl.new Iterator();
 		while(it.hasNext()) {
 			System.out.println(it.next());
-		}		
+		}	
+		sl.reverse();
+		System.out.println("\nAfter reversing");
+	
+		SinglyLink.Iterator it2 = sl.new Iterator();
+		while(it2.hasNext()) {
+			System.out.println(it2.next());
+		}
 	}
 }
 
@@ -30,6 +37,8 @@ class SinglyLink{
 		}
 	}
 	
+	
+	//how do you want to see this class when called from sysout
 	public String toString() {
 		String res = "";
 		Node temp = head;
@@ -57,10 +66,22 @@ class SinglyLink{
 			return temp;
 		}
 	}
+	
+	public void reverse() {
+		Node prev, curr, next;
+		prev = null;
+		curr = head;
+		next = null;
+		
+		while(curr!=null) {
+			next = curr.next;
+			curr.next = prev;
+			prev = curr;
+			curr = next;
+		}
+		head = prev;
+	}
 }
-
-
-
 
 class Node{
 	int data;
