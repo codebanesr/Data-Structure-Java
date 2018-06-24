@@ -3,8 +3,8 @@ class Quicksort {
   public static void main(String[] args) {
     int arr[] = {9,8,6,5,4,77,34,2,1};
     QS(arr, 0, arr.length-1);
-    
     System.out.println(Arrays.toString(arr));
+    
     
   }
   
