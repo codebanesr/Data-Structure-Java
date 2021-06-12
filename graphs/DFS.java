@@ -1,7 +1,6 @@
 package graphs;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import graphs.Graph.Vertex;
@@ -38,5 +37,9 @@ public class DFS {
         
         System.out.println("Starting algorithm \n\n\n\n");
         runDFS(graph, "Bob");
+
+
+
+        // System.out.println(graph.printGraph());
     }
 }
