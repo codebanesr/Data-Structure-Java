@@ -1,8 +1,8 @@
+package graphs;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Graph {
     private Map<Vertex, List<Vertex>> adjVertices;
@@ -52,7 +52,7 @@ public class Graph {
         return sb.toString();
     }
 
-    class Vertex {
+    static class Vertex {
         String label;
         Vertex(String label) {
             this.label = label;
@@ -62,7 +62,7 @@ public class Graph {
         public int hashCode() {
             final int prime = 31;
             int result = 1;
-            result = prime * result + getOuterType().hashCode();
+            // result = prime * result + getOuterType().hashCode();
             result = prime * result + ((label == null) ? 0 : label.hashCode());
             return result;
         }
@@ -76,8 +76,7 @@ public class Graph {
             if (getClass() != obj.getClass())
                 return false;
             Vertex other = (Vertex) obj;
-            if (!getOuterType().equals(other.getOuterType()))
-                return false;
+            
             if (label == null) {
                 if (other.label != null)
                     return false;
@@ -92,8 +91,8 @@ public class Graph {
         }
 
 
-        private Graph getOuterType() {
-            return Graph.this;
-        }
+        // private Graph getOuterType() {
+        //     return Graph.this;
+        // }
     }
 }
