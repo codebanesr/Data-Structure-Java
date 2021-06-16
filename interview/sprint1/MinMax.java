@@ -24,12 +24,15 @@ public class MinMax {
 
 
   public static Pair minmax(int arr[], int start, int end) {
+    // its not end-start<=2; then there are 3 elements that's wrong
     if(end - start < 2) {
       int min = Math.min(arr[start], arr[end]);
       int max = Math.max(arr[start], arr[end]);
       return new Pair(min, max);
     }
 
+    // this is not arr.length / 2 => we are concerned with the current inputs not the array
+    // in divide an conquer always think in terms of indices not the array
     int mid = (start + end) / 2;
     Pair leftpair = minmax(arr, start, mid);
     Pair rightPair = minmax(arr, mid, end);
