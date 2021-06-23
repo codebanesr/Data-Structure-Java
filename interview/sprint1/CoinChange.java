@@ -2,8 +2,8 @@ package interview.sprint1;
 
 public class CoinChange {
   public static void main(String args[]) {
-    int N = 2;
-    int coins[] = { 1 , 2};
+    int N = 11;
+    int coins[] = { 1 , 2, 5 };
 
     System.out.println(Solution(coins, N));
   }
