@@ -1,6 +1,5 @@
 package interview.sprint1;
 
-import java.util.Arrays;
 
 public class BuyAndSellKTransaction {
   public static void main(String args[]) {
