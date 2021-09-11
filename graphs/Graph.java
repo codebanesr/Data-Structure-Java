@@ -31,7 +31,10 @@ public class Graph {
     void removeEdge(String label1, String label2) {
         Vertex v1 = new Vertex(label1);
         Vertex v2 = new Vertex(label2);
+        // edges from v1
         List<Vertex> eV1 = adjVertices.get(v1);
+        
+        // edges from v2
         List<Vertex> eV2 = adjVertices.get(v2);
         if (eV1 != null)
             eV1.remove(v2);
