@@ -4,7 +4,9 @@ import java.util.PriorityQueue;
 
 public class Heap {
   public static void main(String[] args) {
-    PriorityQueue<Integer> pq = new PriorityQueue<>();
+    PriorityQueue<Integer> pq = new PriorityQueue<>((x,y) -> {
+      return Integer.compare(x, y);
+    });
     
     int c = 100;
     while (c>0) {
