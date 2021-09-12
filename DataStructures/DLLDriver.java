@@ -37,12 +37,24 @@ class DLL {
 
 
     void printDLL() {
-        System.out.println("printing nodes");
+        System.out.println("\nprinting nodes");
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + "  ");
             temp = temp.next;
         }
+    }
+
+
+    void reverse() {
+        Node current = head, prev = null, next = null;
+        while (current != null) {
+            next = current.next;
+            current.next = prev;
+            prev = current;
+            current = next;
+        }
+        head = prev;
     }
 }
 
@@ -56,6 +68,9 @@ public class DLLDriver {
 
         dll.addNode(14);
 
+        dll.printDLL();
+
+        dll.reverse();
         dll.printDLL();
     }
 }
