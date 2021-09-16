@@ -5,8 +5,6 @@ public class LongestAlternatingSubsequence {
     int arr[] = {10, 22, 9, 33, 49, 50, 31, 60};
     System.out.println(Solution(arr, true));
 
-
-
     int sol = max_util_memoized(arr);
     System.out.println(sol);
   }
