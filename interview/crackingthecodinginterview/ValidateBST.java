@@ -1,15 +1,5 @@
 package interview.crackingthecodinginterview;
 
-class Tree {
-    int data;
-    public Tree left, right;
-
-    Tree(int data) {
-        this.data = data;
-        left = right = null;
-    }
-}
-
 public class ValidateBST {
     public static void main(String[] args) {
         Tree root = new Tree(100);
