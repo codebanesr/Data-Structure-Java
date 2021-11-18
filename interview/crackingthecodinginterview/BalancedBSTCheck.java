@@ -9,13 +9,14 @@ public class BalancedBSTCheck {
 
     public static boolean isBalanced(Tree root, Height currentHeight) {
         if (root == null) {
+            // very important edge case, heights have to set up when we arrive at the leaf
+            // nodes
+            currentHeight.height = 0;
             return true;
         }
-
+        
         Height left = new Height();
         Height right = new Height();
-
-        // a reference to this is also present at the caller
         currentHeight.height = Math.max(left.height, right.height) + 1;
 
         // we are not trying to get the height of these trees in return value, that will be
@@ -25,9 +26,8 @@ public class BalancedBSTCheck {
 
         if (isLeftBalanced && isRightBalanced && Math.abs(left.height - right.height) < 2) {
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     public static void main(String[] args) {
