@@ -1,4 +1,4 @@
-package interview.sprint2;
+package interview.crackingthecodinginterview.stack;
 
 import java.util.LinkedList;
 
