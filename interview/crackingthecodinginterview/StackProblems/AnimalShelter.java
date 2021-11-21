@@ -1,15 +1,16 @@
 package interview.crackingthecodinginterview.StackProblems;
 
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 class Animal {
     private String type;
-    private static int order;
+    private static AtomicInteger order = new AtomicInteger(0);
     private int insertionOrder;
 
     Animal(String type) {
         this.type = type;
-        insertionOrder = ++order;
+        insertionOrder = order.getAndIncrement();
     }
 
     public int getTimestamp() {
