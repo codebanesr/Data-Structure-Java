@@ -3,15 +3,18 @@ package interview.crackingthecodinginterview.Dynamic;
 import java.util.*;
 class Parens {
     public static void main(String args[]) {
-        int n = 6;
-        countCombination(0, 0, n);
+        int n = 3;
+        countCombination(0, 0, n, "");
         System.out.println(count);
+        System.out.println(Arrays.toString(result.toArray()));
     }
 
     static int count = 0;
+    static LinkedList<String> result = new LinkedList<>();
 
-    public static void countCombination(int oi, int ci, int n) {
+    public static void countCombination(int oi, int ci, int n, String temp) {
         if (oi == n && ci == n) {
+            result.add(temp);
             count++;
         }
 
@@ -19,7 +22,8 @@ class Parens {
             return;
         }
 
-        countCombination(oi + 1, ci, n);
-        countCombination(oi, ci + 1, n);
+        countCombination(oi + 1, ci, n, temp + "(");
+
+        countCombination(oi, ci + 1, n, temp + ")");
     }
 }
