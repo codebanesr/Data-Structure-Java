@@ -4,9 +4,7 @@ import java.util.*;
 class Parens {
     public static void main(String args[]) {
         int n = 6;
-        Stack<Character> st = new Stack<>();
         countCombination(0, 0, n);
-
         System.out.println(count);
     }
 
