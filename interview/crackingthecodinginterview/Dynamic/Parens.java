@@ -3,7 +3,7 @@ package interview.crackingthecodinginterview.Dynamic;
 import java.util.*;
 class Parens {
     public static void main(String args[]) {
-        int n = 3;
+        int n = 100;
         countCombination(0, 0, n, "");
         System.out.println(count);
         System.out.println(Arrays.toString(result.toArray()));
