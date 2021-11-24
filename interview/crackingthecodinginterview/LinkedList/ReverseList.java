@@ -31,16 +31,18 @@ public class ReverseList {
 
     public static Node reverse(Node node) {
         if (node != null && node.next == null) {
+            // this is the tail of the current linked list, we will pass it back the 
+            // recursion chain
             return node;
         }
 
-        Node rest = reverse(node.next);
+        Node tailPointer = reverse(node.next);
         node.next.next = node;
         node.next = null;
 
 
         // rest is just the tail of the initial linked list ...., 
         // this will at the end become the head of the reversed linked list
-        return rest;
+        return tailPointer;
     }
 }
