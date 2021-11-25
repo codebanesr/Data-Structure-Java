@@ -1,3 +1,4 @@
+package sorting;
 class Heap {
     int arr[];
     int size;
@@ -19,7 +20,9 @@ class Heap {
 
     void heapify(int root_index) {
         int max_index = root_index;
-        int child = root_index*2+1;
+        int child = root_index * 2 + 1;
+        // size is not the same as arr.length .... size will change if elements
+        // are taken out of the heap
         if(child<size) {
             if(arr[child] > arr[max_index]) {
                 max_index = child;
@@ -63,7 +66,7 @@ class Heap {
 
 class HeapSort {
     public static void main(String args[]) {
-        int arr[] = { 1, 2, 4, 7, 6, 5, 88, 11, 22, 76 };
+        int arr[] = { 4, 5, 3, 6, 1, 8, 8, 3, 4, 1 };
         Heap h = new Heap(arr);
 
         while(h.getSize()>0) {
