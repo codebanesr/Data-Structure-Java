@@ -79,7 +79,7 @@ class Graph {
 
         while (!q.isEmpty()) {
             int candidate = q.remove();
-            System.out.print(candidate +", ");
+            System.out.print(candidate + ", ");
             for (Edge child : map.get(candidate)) {
                 if (!visited.contains(child.destination)) {
                     visited.add(child.destination);
@@ -88,6 +88,28 @@ class Graph {
             }
         }
     }
+
+    public void DFS(int src) {
+        System.out.println();
+        HashSet<Integer> visited = new HashSet<>();
+        DFSRunner(src, visited);
+    }
+
+    public void DFSRunner(int src, HashSet<Integer> visited) {
+        visited.add(src);
+        System.out.print(src + " ,  ");
+
+        if (map.get(src) == null) {
+            return;
+        }
+
+        for (Edge candidate : map.get(src)) {
+            if (!visited.contains(candidate.destination)) {
+                DFSRunner(candidate.destination, visited);
+            }
+        }
+    }
+
 }
 
 public class Dijkstra {
@@ -123,5 +145,6 @@ public class Dijkstra {
         int[] distance = graph.dijkstra(0);
         System.out.println(Arrays.toString(distance));
         graph.BFS(0);
+        graph.DFS(0);
     }
 }
