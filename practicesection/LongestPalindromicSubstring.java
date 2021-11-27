@@ -1,6 +1,6 @@
 package practicesection;
 
-public class LongestPalindromicSubsequence {
+public class LongestPalindromicSubstring {
     public static void main(String[] args) {
         String s = "palinddnioap";
         int answer = solver(s.toCharArray());
