@@ -4,8 +4,10 @@ import java.util.Arrays;
 
 public class LPSubsequence {
     public static void main(String[] args) {
-        int s = LPS("geeksforgeeks".toCharArray());
+        int s = LPS("MAPDAM".toCharArray());
         System.out.println(s);
+
+        System.out.println(findLPS("MAPDAM".toCharArray()));
     }
 
     public static int LPS(char s[]) {
@@ -17,9 +19,11 @@ public class LPSubsequence {
         for (int i = 0; i < s.length - 1; i++) {
             if (s[i] == s[i + 1]) {
                 dp[i][i + 1] = 2;
+            } else {
+                // this else condition is very important and gets missed a lot of times...
+                dp[i][i + 1] = 1;
             }
         }
-
 
         // s = "shanur"; len = 6
 
@@ -36,5 +40,26 @@ public class LPSubsequence {
 
         System.out.println(Arrays.deepToString(dp));
         return dp[0][s.length - 1];
+    }
+    
+
+    static int findLPS(char s[]) {
+        if (s.length == 0) {
+            return 0;
+        }
+
+        if (s.length == 1) {
+            return 1;
+        }
+
+        if (s.length == 2 && s[0] == s[1]) {
+            return 2;
+        }
+
+        if (s[0] == s[s.length - 1]) {
+            return 2 + findLPS(Arrays.copyOfRange(s, 1, s.length - 1));
+        }
+
+        return Math.max(findLPS(Arrays.copyOfRange(s, 1, s.length)), findLPS(Arrays.copyOfRange(s, 0, s.length - 1)));
     }
 }
