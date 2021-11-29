@@ -12,3 +12,6 @@ DATA STRUCTURE WITH O(1) EVERYTHIHNG
 # Data structure java
 LinkedHashMap
 PrioiryQueue implementation
+
+
+time complexities of backtracking algorithms, sorting algos etc
