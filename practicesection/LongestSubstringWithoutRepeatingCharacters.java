@@ -8,7 +8,7 @@ class ResultPair {
 
 class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String args[]) {
-        String s = "ylllllasdfghj3";
+        String s = "ylllllasdfghj33";
         char result[] = solve(s.toCharArray());
         System.out.println(Arrays.toString(result));
     }
@@ -27,7 +27,7 @@ class LongestSubstringWithoutRepeatingCharacters {
                 if (length > maxLength) {
                     maxLength = length;
                     rp.start = start;
-                    rp.end = end - 1;
+                    rp.end = end;
                 }
                 start = i;
                 end = i;
