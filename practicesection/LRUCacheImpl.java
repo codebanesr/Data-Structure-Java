@@ -2,19 +2,19 @@ package practicesection;
 
 import java.util.*;
 
-class LRUCache {
+class LRUCache<K> {
     class Node {
-        int data;
+        K data;
         Node next, prev;
 
-        Node(int data) {
+        Node(K data) {
             this.data = data;
         }
     }
     
     Node head;
-    HashMap<Integer, Node> map = new HashMap<>();
-    void insert(int data) {
+    HashMap<K, Node> map = new HashMap<>();
+    void insert(K data) {
         Node nn = new Node(data);
         if (head == null) {
             head = nn;
@@ -63,7 +63,7 @@ class LRUCache {
 
 public class LRUCacheImpl {
     public static void main(String[] args) {
-        LRUCache lru = new LRUCache();
+        LRUCache<Integer> lru = new LRUCache<>();
         lru.insert(2);
         lru.insert(21);
         lru.insert(12);
