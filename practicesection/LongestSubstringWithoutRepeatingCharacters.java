@@ -8,7 +8,7 @@ class ResultPair {
 
 class LongestSubstringWithoutRepeatingCharacters {
     public static void main(String args[]) {
-        String s = "ylllllasdfghj33";
+        String s = "ylllllasdfghj33aaasdfasdf";
         char result[] = solve(s.toCharArray());
         System.out.println(Arrays.toString(result));
     }
@@ -21,7 +21,7 @@ class LongestSubstringWithoutRepeatingCharacters {
         for (int i = 0; i < charr.length; i++) {
             if (!hset.contains(charr[i])) {
                 end++;
-            } else {
+            } else if (hset.contains(charr[i]) || i == charr.length - 1) {
                 hset.clear();
                 length = end - start;
                 if (length > maxLength) {
@@ -38,10 +38,11 @@ class LongestSubstringWithoutRepeatingCharacters {
 
         // if the longest string comes at last, we will not arrive at the else condition
         // because the for loop itself terminates ..., therefore we need this check at the end
-        if (end - start > rp.end - rp.start) {
-            rp.end = end;
-            rp.start = start;
-        }
+        // i have now adjusted this statement in if else clause
+        // if (end - start > rp.end - rp.start) {
+        //     rp.end = end;
+        //     rp.start = start;
+        // }
 
         return Arrays.copyOfRange(charr, rp.start, rp.end + 1);
     }
