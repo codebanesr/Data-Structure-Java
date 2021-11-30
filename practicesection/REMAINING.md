@@ -11,10 +11,10 @@ Biggest square in a rectangle
 
 # Data structure java
 LinkedHashMap
-PrioiryQueue implementation
+PriorityQueue implementation
 
 
-time complexities of backtracking algorithms, sorting algos etc
+Time complexities of backtracking algorithms, sorting algos etc
 
 # Design patterns
 # Insertion sort
