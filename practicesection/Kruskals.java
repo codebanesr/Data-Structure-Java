@@ -2,7 +2,7 @@ package practicesection;
 
 import java.util.*;
 
-class Prims {
+class Kruskals {
     class Edge {
         int destination;
         int distance;
@@ -55,14 +55,14 @@ class Prims {
     }
 
     public static void main(String args[]) {
-        Prims p = new Prims();
+        Kruskals k = new Kruskals();
 
-        p.addEdge(0, 1, 10);
-        p.addEdge(0, 2, 6);
-        p.addEdge(0, 3, 5);
-        p.addEdge(1, 3, 15);
-        p.addEdge(2, 3, 4);
+        k.addEdge(0, 1, 10);
+        k.addEdge(0, 2, 6);
+        k.addEdge(0, 3, 5);
+        k.addEdge(1, 3, 15);
+        k.addEdge(2, 3, 4);
 
-        p.printMST();
+        k.printMST();
     }
 }
