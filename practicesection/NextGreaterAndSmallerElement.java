@@ -12,6 +12,15 @@ public class NextGreaterAndSmallerElement {
     
 
 
+    /** At any point in time what we have in stack are the numbers for whom next greater
+     * element has not been found, so the number that we have in a given iteration has
+     * the possibility of being the next greater element for all elements in the stack.
+     * 
+     * but then comes the second problem, which is that in order for this algorithm to work
+     * consecutive numbers in the stack should be greater otherwise we need to iterate over
+     * the entire stack to find if the array element is the next greater element for 
+     * those ..., if you look closely that is exactly the case.
+     */
     static void printNextGreaterElement(int arr[]) {
         Stack<Integer> st = new Stack<>();
         for (int i = 0; i < arr.length; i++) {
