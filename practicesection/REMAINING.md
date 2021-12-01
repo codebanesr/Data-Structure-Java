@@ -20,6 +20,12 @@ Time complexities of backtracking algorithms, sorting algos etc
 # Insertion sort
 # Implement trie in java
 Huffman Codes
+Max area in histogram
+Maximum size rectangle binary sub-matrix 
 
 
 Generic Heap in java with priority queue
+
+Largest square in rectangle using dynamic programming
+
+Next greater element
