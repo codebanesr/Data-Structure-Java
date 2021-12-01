@@ -2,7 +2,7 @@ import java.util.Stack;
 
 public class NextGreaterAndSmallerElement {
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 3, 4, 5, 50, 55, 43, 21, 3, 100 };
+        int arr[] = { 1, 2, 3, 4, 5, 50, 49, 55, 43, 21, 3, 100 };
         System.out.println("Printing next greater elements for all array elements");
         printNextGreaterElement(arr);
 
