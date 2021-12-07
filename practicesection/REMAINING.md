@@ -29,3 +29,11 @@ Generic Heap in java with priority queue
 Largest square in rectangle using dynamic programming
 
 Next greater element
+
+
+rod cutting 
+min cuts to form a palindrome
+trie general structure
+
+
+matrix chain multiplication
