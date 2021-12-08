@@ -1,4 +1,3 @@
-package practicesection;
 
 import java.util.*;
 
@@ -42,14 +41,17 @@ class Graph {
 
     int[] dijkstra(int s) {
         int distance[] = new int[this.V];
+        Arrays.fill(distance, Integer.MAX_VALUE);
 
-        for (int i = 0; i < distance.length; i++) {
-            distance[i] = Integer.MAX_VALUE;
-        }
         int counter = 0;
         distance[s] = 0;
 
         HashSet<Integer> visited = new HashSet<>();
+
+
+        // repeat the following V times 
+        // 1. find vertex with min distance that has not yet been visited and add it to visited
+        // 2. Update all vertices attached to this vertex
         while (counter < distance.length) {
             int candidateIndex = findNextVertex(distance, visited);
             visited.add(candidateIndex);

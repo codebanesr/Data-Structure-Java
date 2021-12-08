@@ -1,7 +1,9 @@
-package practicesection;
 
+/* 
+    https://www.studytonight.com/data-structures/activity-selection-problem 
+    selection of non-conflicting activities that needs to be executed by a single person or machine in a given time frame.
+*/
 import java.util.*;
-
 class Activity {
     int startTime, endTime;
 

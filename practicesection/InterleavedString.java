@@ -1,4 +1,4 @@
-package notdone;
+
 
 public class InterleavedString {
     public boolean isInterleave(String s1, String s2, String s3) {
@@ -26,4 +26,32 @@ public class InterleavedString {
         cache[i1][i2] = result;
         return result;
     }
+
+    public static boolean isInterleaved(int i1, int i2, int i3, char s1[], char s2[], char s3[], Boolean cache[][]) {
+        if (i1 == s1.length && i2 == s2.length) {
+            return true;
+        }
+
+        else if (i1 >= s1.length || i2 >= s2.length) {
+            return false;
+        }
+
+        if (cache[i1][i2] != null) {
+            return cache[i1][i2];
+        }
+
+        boolean result = false;
+        if (s1[i1] == s3[i3]) {
+            result = result || isInterleaved(i1 + 1, i2, i3 + 1, s1, s2, s3, cache);
+        }
+
+        if (s2[i2] == s3[i3]) {
+            result = result || isInterleaved(i1, i2 + 1, i3 + 1, s1, s2, s3, cache);
+        }
+
+        cache[i1][i2] = result;
+
+        return result;
+    }
+
 }

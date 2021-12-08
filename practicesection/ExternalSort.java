@@ -1,5 +1,3 @@
-package practicesection;
-
 import java.util.*;
 
 // Merge k sorted arrays | Set 2 (Different Sized Arrays)
@@ -33,6 +31,7 @@ public class ExternalSort {
     public Integer[] externalSort(int arr[][]) {
         LinkedList<Integer> list = new LinkedList<>();
         PriorityQueue<Pair> pq = new PriorityQueue<>((x, y) -> Integer.compare(x.number, y.number));
+        // to kick start the algorithm add the first element from each array
         for (int i = 0; i < arr.length; i++) {
             pq.add(new Pair(i, arr[i][0], 0));
         }
@@ -41,7 +40,9 @@ public class ExternalSort {
             Pair p = pq.poll();
             list.add(p.number);
 
-
+            // if we extracted the last index from any array, we now need a heap of one 
+            // because we have to compare one less element, since we cant do that
+            // we continue
             if (p.elementIndex >= arr[p.arrayNumber].length - 1) {
                 continue;
             } else {
