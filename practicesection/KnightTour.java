@@ -1,5 +1,3 @@
-package practicesection;
-
 import java.util.Arrays;
 
 public class KnightTour {
@@ -28,6 +26,10 @@ public class KnightTour {
     static int x[] = { 2, 1, -1, -2, -2, -1, 1, 2 };
     static int y[] = { 1, 2, 2, 1, -1, -2, -2, -1 };
 
+    // board is the final result that contains one number on each entry denoting when in the
+    // path was that box covered. We only cover each box once and never again
+    // row and col tells us which cell we are currently exploring as part of the final solution
+    // counter tells how many cells we have covered so far in the path
     static boolean tour(int board[][], int counter, int row, int col) {
         if (counter >= Math.pow(board.length, 2)) {
             return true;

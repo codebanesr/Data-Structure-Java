@@ -1,5 +1,3 @@
-package practicesection;
-
 import java.util.*;
 
 class ResultPair {
@@ -13,6 +11,12 @@ class LongestSubstringWithoutRepeatingCharacters {
         System.out.println(Arrays.toString(result));
     }
 
+    /**  two indices { start, .... end } ; 
+    keep incrementing end as long as yout dont see a repeat character, and add new characters to set
+    as soon as you see a repeat character, calculate the len and store it in 
+    maxlen if maxlen<end-start+1 and store this substring as the maxlensubstring, 
+    also clear your set at this point
+    or if you see the end of array */
     public static char[] solve(char charr[]) {
         int length = 0, maxLength = Integer.MIN_VALUE;
         ResultPair rp = new ResultPair();
@@ -35,15 +39,6 @@ class LongestSubstringWithoutRepeatingCharacters {
 
             hset.add(charr[i]);
         }
-
-        // if the longest string comes at last, we will not arrive at the else condition
-        // because the for loop itself terminates ..., therefore we need this check at the end
-        // i have now adjusted this statement in if else clause
-        // if (end - start > rp.end - rp.start) {
-        //     rp.end = end;
-        //     rp.start = start;
-        // }
-
         return Arrays.copyOfRange(charr, rp.start, rp.end + 1);
     }
 }

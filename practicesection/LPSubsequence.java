@@ -1,4 +1,3 @@
-package practicesection;
 
 import java.util.Arrays;
 

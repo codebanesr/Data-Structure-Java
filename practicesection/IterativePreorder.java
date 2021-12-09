@@ -1,5 +1,3 @@
-package practicesection;
-
 import java.util.*;
 
 class Node {

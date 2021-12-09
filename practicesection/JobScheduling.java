@@ -1,5 +1,14 @@
-package practicesection;
+/** 
+ * Given an array of jobs where every job has a deadline and associated profit
+ * if the job is finished before the deadline. It is also given that every job 
+ * takes a single unit of time, so the minimum possible deadline for any job is 1. 
+ * How to maximize total profit if only one job can be scheduled at a time.
+ */
 
+/**
+ * The key point in this question is that every job takes a single unit of time. So 
+ * we take the job with max profit and schedule it at the last possible slot...
+ */
 import java.util.*;
 class Job {
     int deadline, profit;
@@ -27,6 +36,7 @@ public class JobScheduling {
         int total = 0;
         Arrays.sort(jobs, (j1, j2) -> Integer.compare(j1.profit, j2.profit));
         for (int i = jobs.length - 1; i >= 0; i--) {
+            // finding possible slot for this job to be completed
             for (int j = jobs[i].deadline - 1; j >= 0; j--) {
                 if (!isOccupied[j]) {
                     total += jobs[i].profit;
@@ -40,5 +50,4 @@ public class JobScheduling {
 
         return total;
     }
-
 }
