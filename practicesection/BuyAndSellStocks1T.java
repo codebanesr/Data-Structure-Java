@@ -1,6 +1,4 @@
-import java.util.HashMap;
-
-public class BuyAndSellStocks {
+public class BuyAndSellStocks1T {
     class Pair {
         int index, value;
         Pair(int index, int value) {
@@ -9,7 +7,7 @@ public class BuyAndSellStocks {
         }
     }
     public static void main(String[] args) {
-        BuyAndSellStocks b = new BuyAndSellStocks();
+        BuyAndSellStocks1T b = new BuyAndSellStocks1T();
         int price[] = { 1, 2, 90, 10, 110 };
         int result = b.solve(price);
         System.out.println(result);
@@ -35,8 +33,7 @@ public class BuyAndSellStocks {
                 profit = Math.max(profit, price[i] - minsofar.value);
             }
         }
-        
 
         return profit;
-    }
+    }    
 }
