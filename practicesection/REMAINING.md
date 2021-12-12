@@ -40,7 +40,6 @@ matrix chain multiplication
 
 
 All source shortest path
-Burst balloon
 0/1 knapsack
 
 k transaction buying and selling
