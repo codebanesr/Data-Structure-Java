@@ -24,6 +24,10 @@ public class BuyAndSellStocksKT {
 
         // do we have to buy or sell... we have to start by buying a stock
         if (buy) {
+            // if i dont buy we are still left with K transaction, but we will
+            // not do any thing on day i and so i->i+1, and we are still in the buy phase
+            // thats why passing true...., if we do buy we pay prices[i] therfore a negative
+            // this will be the entire reasoning of the recursion
             return Math.max(calcProfitUtil(prices, i+1, K, true), -prices[i] + calcProfitUtil(prices, i+1, K, false));
         } 
         return Math.max(calcProfitUtil(prices, i+1, K, false), prices[i] + calcProfitUtil(prices, i+1, K-1, true));
