@@ -2,7 +2,7 @@ import java.util.*;
 
 public class BurstBalloon {
     public static void main(String[] args) throws Exception {
-        int[] pricei = { 1, 2 };
+        int[] pricei = { 1, 2, 3, 4, 5 };
         ArrayList<Integer> price = new ArrayList<>();
         for (int i = 0; i < pricei.length; i++) {
             price.add(pricei[i]);
@@ -38,7 +38,6 @@ public class BurstBalloon {
 
         String key = getKey(price);
         if (cache.containsKey(key)) {
-            System.out.println("Memo -- "+key);
             return cache.get(key);
         }
 
