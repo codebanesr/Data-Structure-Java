@@ -23,9 +23,9 @@ public class BuyAndSellStocksKT {
     private int calcProfitUtil(int prices[], int i, int K, boolean buy) {
         int result = 0;
         // if all k transactions are complete || all days have passed
-        if (cache.containsKey(getKey(K, i))) {
-            return cache.get(getKey(K, i));
-        }
+        // if (cache.containsKey(getKey(K, i))) {
+        //     return cache.get(getKey(K, i));
+        // }
         if (K==0 || i == prices.length) {
             return 0;
         }
@@ -37,10 +37,12 @@ public class BuyAndSellStocksKT {
             // thats why passing true...., if we do buy we pay prices[i] therfore a negative
             // this will be the entire reasoning of the recursion
             result = Math.max(calcProfitUtil(prices, i+1, K, true), -prices[i] + calcProfitUtil(prices, i+1, K, false));
-        } 
-        result = Math.max(calcProfitUtil(prices, i + 1, K, false),
-                prices[i] + calcProfitUtil(prices, i + 1, K - 1, true));
-        
+        } else {
+            result = Math.max(calcProfitUtil(prices, i + 1, K, false),
+            prices[i] + calcProfitUtil(prices, i + 1, K - 1, true));
+    
+        }
+
         cache.put(getKey(K, i), result);
         return result;
     }
