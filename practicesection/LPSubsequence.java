@@ -1,12 +1,14 @@
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
 
 public class LPSubsequence {
     public static void main(String[] args) {
-        int s = LPS("MAPDAM".toCharArray());
-        System.out.println(s);
+        // int s = LPS("MAPDAM".toCharArray());
+        // System.out.println(s);
 
-        System.out.println(findLPS("MAPDAM".toCharArray()));
+        System.out.println(findLPS("PALDROAOBRCDLAP".toCharArray()));
     }
 
     public static int LPS(char s[]) {
@@ -42,7 +44,13 @@ public class LPSubsequence {
     }
     
 
+    static HashMap<String, Integer> cache = new HashMap<>();
+
     static int findLPS(char s[]) {
+        if (cache.containsKey(Arrays.toString(s))) {
+            System.out.println("Hit" + Arrays.toString(s) + "  " + cache.get(Arrays.toString(s)));
+            return cache.get(Arrays.toString(s));
+        }
         if (s.length == 0) {
             return 0;
         }
@@ -59,6 +67,9 @@ public class LPSubsequence {
             return 2 + findLPS(Arrays.copyOfRange(s, 1, s.length - 1));
         }
 
-        return Math.max(findLPS(Arrays.copyOfRange(s, 1, s.length)), findLPS(Arrays.copyOfRange(s, 0, s.length - 1)));
+        int result = Math.max(findLPS(Arrays.copyOfRange(s, 1, s.length)),
+                findLPS(Arrays.copyOfRange(s, 0, s.length - 1)));
+        cache.put(Arrays.toString(s), result);
+        return result;
     }
 }
