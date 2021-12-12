@@ -8,7 +8,7 @@ public class BuyAndSellStocks1T {
     }
     public static void main(String[] args) {
         BuyAndSellStocks1T b = new BuyAndSellStocks1T();
-        int price[] = { 1, 2, 90, 10, 110 };
+        int price[] = {1, 2, 90, 10, 110};
         int result = b.solve(price);
         System.out.println(result);
     }
