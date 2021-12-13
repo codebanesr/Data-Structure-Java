@@ -1,6 +1,7 @@
 {
     "java.project.sourcePaths": [
+        "practicesection",
         "DataStructures",
-        "practicesection"
+        "interview/crackingthecodinginterview/Dynamic"
     ]
 }

@@ -44,3 +44,6 @@ All source shortest path
 
 k transaction buying and selling
 1 transaction buying and selling
+Median of two sorted arrays
+Convert rows and cols to 0
+Fewest coins to make change
