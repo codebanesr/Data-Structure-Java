@@ -5,26 +5,26 @@ public class MakeChangeDP {
     public static void main(String[] args) {
         int coins[] = { 25, 10, 5, 1 };
         int sum = 10;
-        int ways[] = calculateWaysToMakeChange(coins, sum);
+        int ways = calculateWaysToMakeChange(coins, sum);
 
-        System.out.println(Arrays.toString(ways));
+        System.out.println("DP sol below");
+        System.out.println(ways);
         
-        System.out.println("Recursive solution below");
+        System.out.println("Recursive memo solution below");
         System.out.println(makeChangeRecursive(coins, sum));
     }
 
-    public static int[] calculateWaysToMakeChange(int coins[], int sum) {
+    public static int calculateWaysToMakeChange(int coins[], int sum) {
         int dp[] = new int[sum + 1];
-        dp[1] = dp[0] = 1;
+        dp[0] = 1;
 
-        for (int i = 2; i < dp.length; i++) {
-            for (int j = 0; j < coins.length; j++) {
-                if (coins[j] <= i) {
-                    dp[i] += dp[i - coins[j]];
-                }
+        for (int i = 0; i < coins.length; i++) {
+            int cc = coins[i];
+            for (int j = cc; j <= sum; j++) { // we can only use this coins when sum>coin.value
+                dp[j] += dp[j - cc];
             }
         }
-        return dp;
+        return dp[dp.length-1];
     }
 
 
