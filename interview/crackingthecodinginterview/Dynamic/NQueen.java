@@ -1,5 +1,3 @@
-package interview.crackingthecodinginterview.Dynamic;
-
 import java.util.*;
 class NQueen {
     public static boolean isSafe(boolean arr[][], int r, int c) {
@@ -49,5 +47,5 @@ class NQueen {
         boolean arr[][] = new boolean[n][n];
         solveNQueen(arr, 0);
         System.out.println(Arrays.deepToString(arr));
-    }   
+    }
 }

@@ -1,5 +1,3 @@
-package interview.crackingthecodinginterview.Dynamic;
-
 import java.util.*;
 
 public class RobotInAGrid {
@@ -16,6 +14,10 @@ public class RobotInAGrid {
 
 
         System.out.println("total ways to reach last row and column " + total);
+
+
+        System.out.println("Now using recursive solution");
+        System.out.println(countWaysRecursive(isAllowed, 0, 0));
 
         x.close();
     }
@@ -43,5 +45,4 @@ public class RobotInAGrid {
 
         return dp[rows-2][cols - 1] + dp[rows-1][cols-2];
     }
-
 }

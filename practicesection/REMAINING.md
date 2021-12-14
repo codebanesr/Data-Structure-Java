@@ -47,3 +47,8 @@ k transaction buying and selling
 Median of two sorted arrays
 Convert rows and cols to 0
 Fewest coins to make change
+
+shortest path in a graph using bfs
+gcd -
+Common prime divisors
+https://github.com/ZRonchy/Codility/blob/master/Lesson10/CommonPrimeDivisors.java
