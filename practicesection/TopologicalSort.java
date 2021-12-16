@@ -44,7 +44,7 @@ public class TopologicalSort {
         TopologicalSort ts = new TopologicalSort();
         ts.addNeighbour(1, 2);
         ts.addNeighbour(1, 3);
-        ts.addNeighbour(1, 4);
+        ts.addNeighbour(1, 4); 
         ts.addNeighbour(4, 5);
         ts.addNeighbour(3, 5);
 
