@@ -52,3 +52,23 @@ shortest path in a graph using bfs
 gcd -
 Common prime divisors
 https://github.com/ZRonchy/Codility/blob/master/Lesson10/CommonPrimeDivisors.java
+
+Hamiltonian cycle
+Graph coloring
+Floyd warshall
+
+
+All kinds of tree view 
+
+
+
+
+
+------------today
+reverse ll in size of k
+
+
+
+Pigeonhole principle
+catalan number
+inclusion exclusion

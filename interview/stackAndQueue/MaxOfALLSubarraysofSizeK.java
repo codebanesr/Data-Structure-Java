@@ -3,6 +3,8 @@ package interview.stackAndQueue;
 import java.util.PriorityQueue;
 
 public class MaxOfALLSubarraysofSizeK {
+    // Maximum of all subarrays of size k, in every subarray of size k 
+    // print the max element.... which is basically pq.peek();
     public static void main(String[] args) {
         int K = 3;
         PriorityQueue<Integer> pq = new PriorityQueue<>(3, (x, y) -> Integer.compare(y, x));

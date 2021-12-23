@@ -1,8 +1,6 @@
 package interview.crackingthecodinginterview.LinkedList;
 
-import interview.sprint2.LinkedList;
-
-public class ReverseInKGroups {
+import interview.sprint2.LinkedListpublic class ReverseInKGroups {
 
     public static void main(String args[]) {
         LinkedList ll = new LinkedList();

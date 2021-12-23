@@ -40,7 +40,7 @@ public class LowestCommonAncestor {
             return left == null ? right : left;
         }
 
-        if(left!=null && right !=null)
+        if (left != null && right != null)
             return node;
 
         return null;

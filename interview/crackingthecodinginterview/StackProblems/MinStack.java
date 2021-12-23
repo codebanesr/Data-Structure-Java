@@ -8,26 +8,26 @@ public class Stack {
         Node next;
 
         Node(int data) {
-	if(data < minValue) {
-		this.data = data - minValue + data;
-		minValue = data;
-} else {
-this.data = data;
-}
+            if (data < minValue) {
+                this.data = data - minValue + data;
+                minValue = data;
+            } else {
+                this.data = data;
+            }
         }
     }
 
     public static int checkIfMinAndModify(int data) {
-    	if(data < minValue) {
-    		int temp = minValue;
-    		minValue = 2*minValue-data;
-    
-    		return temp;
+        if (data < minValue) {
+            int temp = minValue;
+            minValue = 2 * minValue - data;
+
+            return temp;
         }
-    
+
         return data;
     }
-    
+
     public int pop() {
         if (head == null) {
             throw new Error("List is Empty, cannot pop");
@@ -36,7 +36,7 @@ this.data = data;
         if (head.next == null) {
             Node tempval = head;
             head = null;
-            isEmpty = true; 
+            isEmpty = true;
             return checkIfMinAndModify(tempval.data);
         }
 
@@ -51,9 +51,7 @@ this.data = data;
         return checkIfMinAndModify(returnval.data);
     }
 
-    
-
-public void push(int data) {
+    public void push(int data) {
         Node newNode = new Node(data);
         if (isEmpty) {
             isEmpty = false;
@@ -62,7 +60,7 @@ public void push(int data) {
             return;
         }
         Node temp = head;
-        while (temp.next != null && temp!=null) {
+        while (temp.next != null && temp != null) {
             temp = temp.next;
         }
         temp.next = newNode;
@@ -76,8 +74,7 @@ public void push(int data) {
         return isEmpty;
     }
 
-    
-public void print() {
+    public void print() {
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + ", ");
