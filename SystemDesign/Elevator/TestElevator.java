@@ -192,7 +192,6 @@ class Elevator {
 			currentDirection = request.getExternalRequest().getDirectionToGo();
 			currentJobs.add(request);
 		} else if (currentState == State.MOVING) {
-
 			if (request.getExternalRequest().getDirectionToGo() != currentDirection) {
 				addtoPendingJobs(request);
 			} else if (request.getExternalRequest().getDirectionToGo() == currentDirection) {
@@ -205,11 +204,8 @@ class Elevator {
 				} else {
 					currentJobs.add(request);
 				}
-
 			}
-
 		}
-
 	}
 
 	public void addtoPendingJobs(Request request) {
@@ -231,9 +227,7 @@ enum State {
 }
 
 enum Direction {
-
 	UP, DOWN
-
 }
 
 @Data
@@ -244,12 +238,7 @@ class Request implements Comparable<Request> {
 
 	@Override
 	public int compareTo(Request req) {
-		if (this.getInternalRequest().getDestinationFloor() == req.getInternalRequest().getDestinationFloor())
-			return 0;
-		else if (this.getInternalRequest().getDestinationFloor() > req.getInternalRequest().getDestinationFloor())
-			return 1;
-		else
-			return -1;
+		return Integer.compare(this.getInternalRequest().getDestinationFloor(), req.getInternalRequest().getDestinationFloor());
 	}
 }
 
@@ -340,8 +329,5 @@ public class TestElevator {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
 	}
-
 }
