@@ -2,7 +2,8 @@
     "java.project.sourcePaths": [
         "practicesection",
         "interview/crackingthecodinginterview/Dynamic",
+        "errichto",
         "DataStructures",
-        "errichto"
+        "interview"
     ]
 }
