@@ -4,7 +4,7 @@ public class RateLimiter {
     int capacity, time_unit, cur_time;
     Callback forward_callback, drop_callback;
 
-    RateLimiter(int capacity, int time_unit, Callback forward_callback, Callback drop_callback, cur_time) {
+    RateLimiter(int capacity, int time_unit, Callback forward_callback, Callback drop_callback, int cur_time) {
         this.capacity = capacity;
         this.time_unit = time_unit;
         this.forward_callback = forward_callback;
@@ -16,7 +16,12 @@ public class RateLimiter {
     }
 
 
-
+    /**
+        if the current interval has expired, reset cur_count to zero and prev count to current count
+        calculate estimated count, based on sliding window algorithm; 
+        if estimated count is greater than, limit execute drop callback with the packet
+        else execute forward callback passing the packet
+    */
     public void handle(int packet) {
         // if the time between two consecutive packets
         // is more than window size, set cur_count = 0

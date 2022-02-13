@@ -1,0 +1,4 @@
+### Actors
+VendingMachine and interaction
+
+### 
