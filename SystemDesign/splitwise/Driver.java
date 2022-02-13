@@ -20,6 +20,7 @@ public class Driver {
 
         Scanner scanner = new Scanner(System.in);
         while (true) {
+            // Input: u1 1250 2 u2 u3 EXACT 370 880
             String command = scanner.nextLine();
             String[] commands = command.split(" ");
             String commandType = commands[0];
